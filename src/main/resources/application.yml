@@ -1,0 +1,12 @@
+cloud:
+  aws:
+    credentials:
+      access-key: MY_ACCESS_KEY
+      secret-key: MY_SECRET_KEY
+    region:
+      static: KENDRA_REGION
+      auto: false
+      stack:
+        auto: false
+kendra:
+  index-id: KENDRA_INDEX_ID
