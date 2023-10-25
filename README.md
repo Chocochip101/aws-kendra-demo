@@ -16,9 +16,11 @@ In the application.yml, you should enter the access key, secret key, and the ind
 2. Build the project: `./gradlew build`.
 3. Build the project into a JAR file: `java -jar aws-kendra-demo-0.0.1-SNAPSHOT.jar`.
 
+# API's
+- Search Query: `Get`, `/search`
+- Create Index: `Post`, `/kendra/index`
 
-
-# Result Examples
+# Query Result Examples
 ```json
 [
   {

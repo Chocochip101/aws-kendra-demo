@@ -13,7 +13,7 @@ import software.amazon.awssdk.services.kendra.model.QueryResultType;
 
 @Service
 @RequiredArgsConstructor
-public class DemoService {
+public class QueryService {
     @Value("${kendra.index-id}")
     private String osIndexId = "your-index-id";
 
