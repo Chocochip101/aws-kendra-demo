@@ -23,13 +23,13 @@ public class DemoController {
 
     @GetMapping("/search")
     public ResponseEntity<List<SearchResultDTO>> search(
-            @RequestParam("keyword") String keyword, @RequestParam("id") String indexId) {
+            @RequestParam("keyword") String keyword, @RequestParam("index-id") String indexId) {
         return ResponseEntity.ok(indexService.searchForDocuments(keyword, indexId));
     }
 
     @PostMapping("/datasource/s3")
     public ResponseEntity<String> addDataSource(
-            @RequestBody S3DataSourceRequestDTO s3DataSourceRequestDTO, @RequestParam("id") String indexId) {
+            @RequestBody S3DataSourceRequestDTO s3DataSourceRequestDTO, @RequestParam("index-id") String indexId) {
         return ResponseEntity.ok(indexService.addS3DataSource(s3DataSourceRequestDTO, indexId));
     }
 
