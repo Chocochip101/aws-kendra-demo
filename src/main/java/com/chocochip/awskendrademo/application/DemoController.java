@@ -8,6 +8,7 @@ import com.chocochip.awskendrademo.service.IndexService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,5 +43,11 @@ public class DemoController {
     @PostMapping("/kendra/index")
     public ResponseEntity<String> createIndex(@RequestBody IndexRequestDTO indexRequestDTO) {
         return ResponseEntity.ok(kendraService.createIndex(indexRequestDTO));
+    }
+
+    @DeleteMapping("/kendra/index")
+    public ResponseEntity<Boolean> deleteIndex(@RequestParam("index-id") String indexId) {
+        kendraService.deleteIndex(indexId);
+        return ResponseEntity.ok(true);
     }
 }

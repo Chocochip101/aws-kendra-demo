@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import software.amazon.awssdk.services.kendra.KendraClient;
 import software.amazon.awssdk.services.kendra.model.CreateIndexRequest;
 import software.amazon.awssdk.services.kendra.model.CreateIndexResponse;
+import software.amazon.awssdk.services.kendra.model.DeleteIndexRequest;
 
 @Service
 @RequiredArgsConstructor
@@ -24,4 +25,11 @@ public class KendraService {
         return index.id();
     }
 
+    public void deleteIndex(String indexId) {
+        DeleteIndexRequest deleteIndexRequest = DeleteIndexRequest
+                .builder()
+                .id(indexId)
+                .build();
+        kendraClient.deleteIndex(deleteIndexRequest);
+    }
 }

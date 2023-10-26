@@ -21,6 +21,7 @@ In the application.yml, you should enter the access key, secret key, and the ind
 - Add S3 Datasource: `Post`, `/datasource/s3`
 - Sync Datasource: `Get`, `/sync`
 - Create Index: `Post`, `/kendra/index`
+- Delete Index: `Delete`, `/kendra/index`
 
 # Query Result Examples
 ```json
