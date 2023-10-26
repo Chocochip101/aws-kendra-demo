@@ -32,6 +32,13 @@ public class DemoController {
         return ResponseEntity.ok(indexService.addS3DataSource(s3DataSourceRequestDTO, indexId));
     }
 
+    @GetMapping("/sync")
+    public ResponseEntity<Boolean> sync(
+            @RequestParam("index-id") String indexId, @RequestParam("datasource-id") String dataSourceId) {
+        indexService.syncDataSource(indexId, dataSourceId);
+        return ResponseEntity.ok(true);
+    }
+
     @PostMapping("/kendra/index")
     public ResponseEntity<String> createIndex(@RequestBody IndexRequestDTO indexRequestDTO) {
         return ResponseEntity.ok(kendraService.createIndex(indexRequestDTO));

@@ -16,6 +16,7 @@ import software.amazon.awssdk.services.kendra.model.QueryRequest;
 import software.amazon.awssdk.services.kendra.model.QueryResponse;
 import software.amazon.awssdk.services.kendra.model.QueryResultType;
 import software.amazon.awssdk.services.kendra.model.S3DataSourceConfiguration;
+import software.amazon.awssdk.services.kendra.model.StartDataSourceSyncJobRequest;
 
 @Service
 @RequiredArgsConstructor
@@ -82,4 +83,12 @@ public class IndexService {
                 .build();
     }
 
+    public void syncDataSource(String indexId, String dataSourceId) {
+        StartDataSourceSyncJobRequest startDataSourceSyncJobRequest = StartDataSourceSyncJobRequest
+                .builder()
+                .indexId(indexId)
+                .id(dataSourceId)
+                .build();
+        kendraClient.startDataSourceSyncJob(startDataSourceSyncJobRequest);
+    }
 }

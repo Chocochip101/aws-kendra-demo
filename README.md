@@ -19,6 +19,7 @@ In the application.yml, you should enter the access key, secret key, and the ind
 # API's
 - Search Query: `Get`, `/search`
 - Add S3 Datasource: `Post`, `/datasource/s3`
+- Sync Datasource: `Get`, `/sync`
 - Create Index: `Post`, `/kendra/index`
 
 # Query Result Examples
