@@ -3,7 +3,7 @@ package com.chocochip.awskendrademo.application;
 import com.chocochip.awskendrademo.dto.IndexRequestDTO;
 import com.chocochip.awskendrademo.dto.SearchResultDTO;
 import com.chocochip.awskendrademo.service.KendraService;
-import com.chocochip.awskendrademo.service.QueryService;
+import com.chocochip.awskendrademo.service.IndexService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class DemoController {
-    private final QueryService demoService;
+    private final IndexService indexService;
     private final KendraService kendraService;
 
     @GetMapping("/search")
     public ResponseEntity<List<SearchResultDTO>> search(
             @RequestParam("keyword") String keyword, @RequestParam("id") String indexId) {
-        return ResponseEntity.ok(demoService.searchForDocuments(keyword, indexId));
+        return ResponseEntity.ok(indexService.searchForDocuments(keyword, indexId));
     }
 
     @PostMapping("/kendra/index")

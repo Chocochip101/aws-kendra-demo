@@ -12,7 +12,7 @@ import software.amazon.awssdk.services.kendra.model.QueryResultType;
 
 @Service
 @RequiredArgsConstructor
-public class QueryService {
+public class IndexService {
     private final KendraClient kendraClient;
 
     public List<SearchResultDTO> searchForDocuments(String query, String indexId) {
