@@ -6,9 +6,9 @@ For more information on getting started with AWS Kendra, see on [What is Amazon 
 
 
 # Prerequisite
-To use the examples in this documentation, you must have an AWS account and create an AWS Kendra Index.
+To use the examples in this documentation, you must have an AWS account.
 
-In the application.yml, you should enter the access key, secret key, and the index ID generated in AWS Kendra.
+In the application.yml, you should enter the access key, secret key, and the AWS Kendra Region.
 
 
 # Run Guide
@@ -16,7 +16,7 @@ In the application.yml, you should enter the access key, secret key, and the ind
 2. Build the project: `./gradlew build`.
 3. Build the project into a JAR file: `java -jar aws-kendra-demo-0.0.1-SNAPSHOT.jar`.
 
-# API's
+# API Spec
 - Search Query: `Get`, `/search`
 - Add S3 Datasource: `Post`, `/datasource/s3`
 - Sync Datasource: `Get`, `/sync`
