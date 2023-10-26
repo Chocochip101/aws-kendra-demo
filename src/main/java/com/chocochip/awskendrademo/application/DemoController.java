@@ -1,6 +1,7 @@
 package com.chocochip.awskendrademo.application;
 
 import com.chocochip.awskendrademo.dto.IndexRequestDTO;
+import com.chocochip.awskendrademo.dto.S3DataSourceRequestDTO;
 import com.chocochip.awskendrademo.dto.SearchResultDTO;
 import com.chocochip.awskendrademo.service.KendraService;
 import com.chocochip.awskendrademo.service.IndexService;
@@ -23,6 +24,12 @@ public class DemoController {
     public ResponseEntity<List<SearchResultDTO>> search(
             @RequestParam("keyword") String keyword, @RequestParam("id") String indexId) {
         return ResponseEntity.ok(indexService.searchForDocuments(keyword, indexId));
+    }
+
+    @PostMapping("/datasource/s3")
+    public ResponseEntity<String> addDataSource(
+            @RequestBody S3DataSourceRequestDTO s3DataSourceRequestDTO, @RequestParam("id") String indexId) {
+        return ResponseEntity.ok(indexService.addS3DataSource(s3DataSourceRequestDTO, indexId));
     }
 
     @PostMapping("/kendra/index")

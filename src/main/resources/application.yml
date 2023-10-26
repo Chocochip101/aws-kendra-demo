@@ -1,10 +1,10 @@
 cloud:
   aws:
     credentials:
-      access-key: MY_ACCESS_KEY
-      secret-key: MY_SECRET_KEY
+      access-key: AKIAYNOK6RHHVMN2B4OY
+      secret-key: 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
     region:
-      static: KENDRA_REGION
+      static: ap-northeast-1
       auto: false
       stack:
         auto: false
