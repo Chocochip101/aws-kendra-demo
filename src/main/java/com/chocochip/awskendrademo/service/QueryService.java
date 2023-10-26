@@ -4,7 +4,6 @@ import com.chocochip.awskendrademo.dto.SearchResultDTO;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.services.kendra.KendraClient;
 import software.amazon.awssdk.services.kendra.model.QueryRequest;
@@ -14,16 +13,13 @@ import software.amazon.awssdk.services.kendra.model.QueryResultType;
 @Service
 @RequiredArgsConstructor
 public class QueryService {
-    @Value("${kendra.index-id}")
-    private String osIndexId = "your-index-id";
-
     private final KendraClient kendraClient;
 
-    public List<SearchResultDTO> searchForDocuments(String query) {
+    public List<SearchResultDTO> searchForDocuments(String query, String indexId) {
         QueryRequest queryRequest = QueryRequest
                 .builder()
                 .queryText(query)
-                .indexId(osIndexId)
+                .indexId(indexId)
                 .build();
 
         QueryResponse queryResponse = kendraClient.query(queryRequest);

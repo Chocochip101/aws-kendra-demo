@@ -8,5 +8,3 @@ cloud:
       auto: false
       stack:
         auto: false
-kendra:
-  index-id: KENDRA_INDEX_ID

@@ -20,13 +20,13 @@ public class DemoController {
     private final KendraService kendraService;
 
     @GetMapping("/search")
-    public ResponseEntity<List<SearchResultDTO>> search(@RequestParam("keyword") String keyword) {
-        return ResponseEntity.ok(demoService.searchForDocuments(keyword));
+    public ResponseEntity<List<SearchResultDTO>> search(
+            @RequestParam("keyword") String keyword, @RequestParam("id") String indexId) {
+        return ResponseEntity.ok(demoService.searchForDocuments(keyword, indexId));
     }
 
     @PostMapping("/kendra/index")
-    public ResponseEntity<Boolean> createIndex(@RequestBody IndexRequestDTO indexRequestDTO) {
-        kendraService.createIndex(indexRequestDTO);
-        return ResponseEntity.ok(true);
+    public ResponseEntity<String> createIndex(@RequestBody IndexRequestDTO indexRequestDTO) {
+        return ResponseEntity.ok(kendraService.createIndex(indexRequestDTO));
     }
 }
