@@ -6,9 +6,9 @@ For more information on getting started with AWS Kendra, see on [What is Amazon 
 
 
 # Prerequisite
-To use the examples in this documentation, you must have an AWS account.
+To utilize the examples provided in this documentation, you must have an AWS account.
 
-In the application.yml, you should enter the access key, secret key, and the AWS Kendra Region.
+Additionally, in the application.yml configuration file, you should enter your access key, secret key, and the AWS Kendra Region.
 
 
 # Run Guide
